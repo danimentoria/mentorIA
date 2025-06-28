@@ -1,0 +1,14 @@
+entrypoint = "src/index.js"
+modules = ["nodejs-20", "nodejs-22"]
+
+[nix]
+channel = "stable-24_11"
+packages = ["sqlite"]
+
+[deployment]
+run = ["node", "src/index.js"]
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
